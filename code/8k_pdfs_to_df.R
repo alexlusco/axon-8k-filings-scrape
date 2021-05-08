@@ -14,8 +14,7 @@ df <- df %>% mutate(date = document) %>%
          date = as.Date(date, format = "%Y-%m-%d"))
 
 df_clean <- df %>% 
-  unnest(text) %>% 
-  mutate(text = str_squish(text))
+  unnest(text)
 
 p <- function(v) {
   Reduce(f=paste0, x = v)
@@ -29,6 +28,9 @@ df_clean <- df_clean %>%
   mutate(word_count = str_count(text)) %>% 
   filter(word_count > 0)
 
+df_clean <- df_clean %>%
+  mutate(text = str_squish(text))
+  
 write_csv(df_clean, "data/8ks_text_df.csv")
 
 

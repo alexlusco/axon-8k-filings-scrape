@@ -4,7 +4,6 @@ library(here)
 
 # Read in axon cumulative abnormal return data from event study
 axon_cars <- read_csv("data/axon-cars.csv") %>% clean_names()
-axon_cars
 
 # Read in axon event data, fix formatting (weird formatting was required for EventStudy lib)
 axon_events <- read_delim("data/EventStudy-files/01_requestFile.csv", col_names = F, delim = ";")
