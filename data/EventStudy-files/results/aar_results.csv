@@ -1,14 +1,14 @@
-"Grouping Variable/N";AAR(-2);AAR(-1);AAR(0);AAR(1);AAR(2)
-CurrentReport;0.0036;0.0029;-0.0044;-0.0008;-0.0026
-"N(CurrentReport, AAR(i))";140;140;140;140;140
-"Pos:Neg(CurrentReport, AAR(i))";78:62;80:60;64:76;61:79;65:75
-"Patell Z";1.551;1.4735;-1.114;0.3898;-0.1952
-"Generalized Sign Z";1.9132;2.2516;-0.4559;-0.9635;-0.2867
-"Csect T";1.3895;1.2206;-0.8729;-0.1568;-0.9416
-"StdCSect Z";1.5189;1.517;-0.5271;0.152;-0.1591
-"Rank Z";1.0701;1.1305;-1.2269;-2.4332;-1.0147
-"Generalized Rank T";1.0216;1.1279;-0.6763;-1.1425;-1.0341
-"Adjusted Patell Z";1.5535;1.4758;-1.1158;0.3905;-0.1955
-"Adjusted StdCSect Z";1.5195;1.5175;-0.5273;0.1521;-0.1592
-"Generalized Rank Z";1.1469;1.2655;-0.7598;-1.2824;-1.159
-"Skewness Corrected T";1.4371;1.16;-0.9004;-0.1284;-0.9645
+"Grouping Variable/N";AAR(0);AAR(1);AAR(2)
+CurrentReport;-0.0096;0.0001;-0.0029
+"N(CurrentReport, AAR(i))";167;167;167
+"Pos:Neg(CurrentReport, AAR(i))";72:95;71:96;80:87
+"Patell Z";-3.1911;0.4554;-0.3858
+"Generalized Sign Z";-1.1466;-1.3016;0.093
+"Csect T";-1.8184;0.0188;-0.7911
+"StdCSect Z";-1.551;0.1774;-0.2997
+"Rank Z";-1.7135;-1.6394;-0.244
+"Generalized Rank T";-1.1083;-0.3872;-0.2227
+"Adjusted Patell Z";-3.1924;0.4556;-0.3859
+"Adjusted StdCSect Z";-1.5517;0.1775;-0.2998
+"Generalized Rank Z";-1.1166;-0.3899;-0.2238
+"Skewness Corrected T";-1.8981;0.031;-0.8288

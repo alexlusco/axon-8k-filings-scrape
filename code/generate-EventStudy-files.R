@@ -14,12 +14,12 @@ firmSymbols %>%
 knitr::kable(head(firmData), pad=0)
 
 # Index Data
-indexSymbol <- c("^NDXT")
-indexName <- c("NDXT")
+indexSymbol <- c("^GSPC")
+indexName <- c("GSPC")
 indexSymbol %>% 
   tidyquant::tq_get(from = startDate, to = endDate) %>% 
   dplyr::mutate(date = format(date, "%d.%m.%Y")) -> indexData
-indexData$symbol <- "NDXT"
+indexData$symbol <- "GSPC"
 knitr::kable(head(indexData), pad=0)
 
 # Price files for firms and market
@@ -57,12 +57,12 @@ event_params_ticker <- events %>%
   filter(filing_date < "2021-01-01") %>%
   mutate(event_id = row_number()) %>%
   mutate(firm_id = "AXON") %>%
-  mutate(market_id = "NDXT") %>%
+  mutate(market_id = "GSPC") %>%
   mutate(event_date = format(filing_date, "%d.%m.%Y")) %>%
   mutate(grping_var = "CurrentReport") %>%
-  mutate(event_strt = -2) %>%
+  mutate(event_strt = 0) %>%
   mutate(event_end = 2) %>%
-  mutate(est_end = -30) %>%
+  mutate(est_end = -14) %>%
   mutate(est_lngth = 120) %>%
   select(-filing_date)
 

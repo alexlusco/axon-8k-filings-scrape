@@ -44,9 +44,9 @@ estResult <- estSetup$performDefaultEventStudy(estType    = estType,
 knitr::kable(head(estResult$arResults))
 
 # Save restults as tibble and export as .csv
-abnormal_returns <- tibble(estResult$arResults)
+car_results <- tibble(estResult$carResults)
 
-write_csv(abnormal_returns, "~/Dropbox/Git_Repos/axon-8k-scrape/data/EventStudy-files/axon-abnormal-returns.csv")
+write_csv(car_results, "~/Dropbox/Git_Repos/axon-8k-scrape/data/axon-cars.csv")
 
 
 
