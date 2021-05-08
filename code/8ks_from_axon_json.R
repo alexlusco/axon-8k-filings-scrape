@@ -31,7 +31,7 @@ for(u in urls){
 
 final_df <- bind_rows(output)
 
-write_csv(final_df, "data/8ks_from_sec_json.csv")
+write_csv(final_df, "data/8ks_from_axon_json.csv")
 
 
 
