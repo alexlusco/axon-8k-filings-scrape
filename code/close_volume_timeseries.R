@@ -12,7 +12,7 @@ axon_stock %>%
   theme(axis.text.x = element_text(angle = 90)) +
   labs(title = "AXON daily closing stock price, 2001-2021")
 
-ggsave("figures/axon_close.pdf")
+ggsave("figures/axon_close.png")
 
 axon_stock %>%
   ggplot(aes(x = date, y = volume)) +
@@ -23,6 +23,6 @@ axon_stock %>%
   theme(axis.text.x = element_text(angle = 90)) +
   labs(title = "AXON daily total volume, 2001-2021")
 
-ggsave("figures/axon_volume.pdf")
+ggsave("figures/axon_volume.png")
 
   
