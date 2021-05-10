@@ -14,3 +14,15 @@ axon_df %>%
   labs(title = "AXON cumulative abnormal returns, 2001-2021") 
 
 ggsave("figures/axon_cars.png", width = 8, height = 5)  
+
+axon_df %>%
+  ggplot(aes(x = event_date, y = car_value)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "red") +
+  theme_ridges() +
+  scale_x_date(breaks = "2 years", date_labels = "%Y") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "AXON cumulative abnormal returns, 2001-2021") 
+
+ggsave("figures/axon_cars2.png", width = 8, height = 5)  
+
