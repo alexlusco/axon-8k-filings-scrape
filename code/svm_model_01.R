@@ -19,7 +19,6 @@ axon_df <- read_csv("data/axon-nlp-es-master-df.csv")
 axon_df <- axon_df %>%
   mutate(year = format(as.Date(event_date, "%Y-%m-%d"), format = "%Y"),
          text = str_remove_all(text, "'")) %>% #fucks up the randomForest modeling if leave im
-  #mutate(text = tolower(text)) %>%
   mutate(across(c(car_value, year), as.numeric)) %>%
   select(car_value, event_date, year, text, word_count)
 
@@ -54,6 +53,7 @@ svm_spec <- svm_linear() %>%
 
 svm_fit <- workflow() %>%
   add_recipe(axon_rec) %>%
+  #add_recipe(axon_rec2) %>%
   add_model(svm_spec)
 
 svm_fit %>%
@@ -61,7 +61,7 @@ svm_fit %>%
   pull_workflow_fit() %>%
   tidy() %>%
   arrange(-estimate) %>% # positive CARs
-  print(n = 150)
+  view()
 
 svm_fit %>%
   fit(data = axon_train) %>%

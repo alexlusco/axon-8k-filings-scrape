@@ -32,7 +32,35 @@ axon_df <- axon_df %>%
   mutate(across(c(car_value, year), as.numeric)) %>%
   select(car_value, event_date, year, text, word_count)
 
+########################
+# Feature engineering
+########################
+
+transparency_mention <- function(x){
+  str_detect(x, "transparency | Transparency")
+}
+
+iacp_mention <- function(x){
+  str_detect(x, "iacp | i.a.c.p. | international association of chiefs of police | IACP | I.A.C.P. | International Association of Chiefs of Police")
+}
+
+death_count <- function(x){
+  str_count(x, "death | Death")
+}
+
+extract_funs <- list(transparency_count = transparency_count,
+                     iacp_mention = iacp_mention,
+                     death_count = death_count)
+
+transparency_mention(axon_df$text)
+
+########################
+# Build recipe
+########################
+
 final_rec <- recipe(car_value ~ text + year + word_count, data = axon_train) %>%
+  step_mutate(text_copy = text) %>%
+  step_textfeature(text_copy, extract_functions = extract_funs) %>%
   step_tokenize(text, token = "ngrams", options = list(n = 2, n_min = 1)) %>%
   step_tokenfilter(text, max_tokens = tune()) %>%
   step_tfidf(text) %>%
@@ -72,6 +100,8 @@ final_rs <- tune_grid(
   metrics = metric_set(rmse, mae, mape),
   control = control_resamples(save_pred = TRUE)
 )
+
+final_rs
 
 ########################
 # Model evaluation
