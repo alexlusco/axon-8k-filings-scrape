@@ -7,6 +7,7 @@ axon_df <- read_csv("data/axon-nlp-es-master-df.csv")
 axon_df %>%
   ggplot(aes(x = event_date, y = car_value)) +
   geom_line() +
+  geom_hline(yintercept = 0, colour = "red") +
   theme_ridges() +
   scale_x_date(breaks = "2 years", date_labels = "%Y") +
   theme(axis.text.x = element_text(angle = 90)) +

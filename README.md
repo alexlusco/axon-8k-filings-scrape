@@ -1,6 +1,6 @@
 # AXON 8k Filings Project
 
-*Work in progress*
+*Work in progress...*
 
 ![](https://github.com/alexlusco/axon-8k-filings-scrape/blob/main/figures/axon_close.png)
 
